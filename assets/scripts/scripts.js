@@ -22,13 +22,14 @@ $(document).ready(function (){
     function isError() {
         errorNotifier.toggleClass('-activated');
     }
-
+//TODO
     function isNotACity() {
         message == "city not found";
     }
 
     btn.click(function() {
         $.getJSON('http://api.openweathermap.org/data/2.5/weather?q=' + input.val() + '&APPID=24ded0daa1863e28a12f2962c113341b', function(result) {
+            console.log(result);
             setWeatherData(result);
             if (input.isNotACity()) {
                 return isError();
